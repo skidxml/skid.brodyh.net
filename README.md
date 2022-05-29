@@ -1,2 +1,1 @@
-# skid.brodyh.net
-the
+# a little html website i made
