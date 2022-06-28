@@ -1,0 +1,60 @@
+<!--
+recycled from brodyh.net/chatroom
+-->
+<html>
+<head>
+<script src="https://kihtrak.com/cloud_variable/cloudify.min.js"></script>
+<style>
+body {
+  font: 100% arial;
+}
+table, th, td {
+  border:1px solid black;
+}
+	</style>
+<title>questions.</title>
+</head>
+<body>
+<center>
+<h1>questions?</h1>
+<small>skid change this please !!!!!!!</small>
+
+<script>
+submittedq = "not yet"
+setInterval(update, 500);
+function update() {
+	 if (typeof cloud_skidquestionlog !== 'undefined' && submittedq !== "yeah") {
+		 document.getElementById("message").removeAttribute("hidden");
+		 document.getElementById("coolbutton").removeAttribute("hidden");
+	 }
+}
+</script>
+<br>
+<input hidden type="text" id="message" placeholder="Message" size="70" autocomplete="off">
+<button hidden type="submit" onclick="load()" id="coolbutton">Submit</button>
+
+
+<script>
+cloud_skidquestionlog = ""
+
+function load() {
+  message = document.getElementById("message").value;
+  cloud_skidquestionlog = cloud_skidquestionlog + "<br><b>question: </b>" + message;
+  document.getElementById("message").hidden = "true";
+  document.getElementById("coolbutton").hidden = "true";
+  submittedq = "yeah"
+  alert("you've submitted a question!!!! thanks!");
+}
+
+var input = document.getElementById("message");
+input.addEventListener("keyup", function(load) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("coolbutton").click();
+  }
+});
+
+
+
+
+</script>
